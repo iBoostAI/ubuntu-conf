@@ -1,0 +1,4 @@
+#https://downloads.mariadb.org/mariadb/repositories/ 
+
+deb [arch=amd64] http://mirrors.tuna.tsinghua.edu.cn/mariadb/repo/10.3/ubuntu cosmic main
+deb-src http://mirrors.tuna.tsinghua.edu.cn/mariadb/repo/10.3/ubuntu cosmic main

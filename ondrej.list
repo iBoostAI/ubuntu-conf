@@ -1,0 +1,5 @@
+#https://deb.sury.org/
+#https://launchpad.net/~ondrej/+archive/ubuntu/php
+
+deb http://ppa.launchpad.net/ondrej/php/ubuntu cosmic main
+deb-src http://ppa.launchpad.net/ondrej/php/ubuntu cosmic main

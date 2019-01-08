@@ -1,0 +1,11 @@
+deb http://sg.archive.ubuntu.com/ubuntu cosmic main restricted universe multiverse
+deb http://sg.archive.ubuntu.com/ubuntu cosmic-security main restricted universe multiverse
+deb http://sg.archive.ubuntu.com/ubuntu cosmic-updates main restricted universe multiverse
+deb http://sg.archive.ubuntu.com/ubuntu cosmic-proposed main restricted universe multiverse
+deb http://sg.archive.ubuntu.com/ubuntu cosmic-backports main restricted universe multiverse
+
+deb-src http://sg.archive.ubuntu.com/ubuntu cosmic main restricted universe multiverse
+deb-src http://sg.archive.ubuntu.com/ubuntu cosmic-security main restricted universe multiverse
+deb-src http://sg.archive.ubuntu.com/ubuntu cosmic-updates main restricted universe multiverse
+deb-src http://sg.archive.ubuntu.com/ubuntu cosmic-proposed main restricted universe multiverse
+deb-src http://sg.archive.ubuntu.com/ubuntu cosmic-backports main restricted universe multiverse
