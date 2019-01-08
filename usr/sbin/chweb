@@ -1,0 +1,6 @@
+#!/bin/bash
+
+chown -R www-data:www-data /usr/share/nginx
+find /usr/share/nginx/ -type d -exec chmod 755 {} \;
+find /usr/share/nginx/ -type f ! -name '*.php' -exec chmod 644 {} \;
+find /usr/share/nginx/ -type f -name '*.php' -exec chmod 755 {} \;
