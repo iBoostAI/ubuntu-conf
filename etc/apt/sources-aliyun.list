@@ -6,17 +6,17 @@
 ## b.) add sources in /etc/apt/sources.list.d
 ## c.) make changes to template file /etc/cloud/templates/sources.list.tmpl
 
-deb http://mirrors.cloud.aliyuncs.com/ubuntu/ cosmic main universe multiverse
-deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ cosmic main universe multiverse
+deb http://mirrors.cloud.aliyuncs.com/ubuntu/ disco main universe multiverse
+deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ disco main universe multiverse
 
-deb http://mirrors.cloud.aliyuncs.com/ubuntu/ cosmic-updates main universe multiverse
-deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ cosmic-updates main universe multiverse
+deb http://mirrors.cloud.aliyuncs.com/ubuntu/ disco-updates main universe multiverse
+deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ disco-updates main universe multiverse
 
-deb http://mirrors.cloud.aliyuncs.com/ubuntu/ cosmic-backports main restricted universe multiverse
-deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ cosmic-backports main restricted universe multiverse
+deb http://mirrors.cloud.aliyuncs.com/ubuntu/ disco-backports main restricted universe multiverse
+deb-src http://mirrors.cloud.aliyuncs.com/ubuntu/ disco-backports main restricted universe multiverse
 
-deb http://mirrors.cloud.aliyuncs.com/ubuntu cosmic-security main universe multiverse
-deb-src http://mirrors.cloud.aliyuncs.com/ubuntu cosmic-security main universe multiverse
+deb http://mirrors.cloud.aliyuncs.com/ubuntu disco-security main universe multiverse
+deb-src http://mirrors.cloud.aliyuncs.com/ubuntu disco-security main universe multiverse
 
-deb http://archive.canonical.com/ubuntu cosmic partner
-deb-src http://archive.canonical.com/ubuntu cosmic partner
+deb http://archive.canonical.com/ubuntu disco partner
+deb-src http://archive.canonical.com/ubuntu disco partner
