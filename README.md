@@ -1,2 +1,2 @@
 # ubuntu-conf
-Confs for latest edition of Ubuntu server (currently 18.10)
+Configration files for Ubuntu server (currently 19.04)
