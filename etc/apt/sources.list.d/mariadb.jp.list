@@ -1,4 +1,0 @@
-#https://downloads.mariadb.org/mariadb/repositories/ 
-
-deb [arch=amd64] http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.3/ubuntu cosmic main
-deb-src http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.3/ubuntu cosmic main
