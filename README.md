@@ -1,2 +1,2 @@
 # ubuntu-conf
-Configration files for Ubuntu server (currently 19.04)
+Configration files for Ubuntu server (currently 19.10)
