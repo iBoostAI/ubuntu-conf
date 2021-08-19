@@ -1,11 +1,11 @@
 # ubuntu-conf
 Configration files for Ubuntu server (currently 21.04)
 
-ufw allow 80/tcp 
-ufw allow 443/tcp 
-ufw allow 3306/tcp 
-ufw disable && ufw --force enable 
-ufw status 
+ufw allow 80/tcp<br>
+ufw allow 443/tcp<br>
+ufw allow 3306/tcp<br>
+ufw disable && ufw --force enable<br>
+ufw status<br>
 
 apt -y update && apt -y upgrade 
 apt -y install apt-transport-https software-properties-common dirmngr gnupg2 ufw unattended-upgrades cron-apt 
