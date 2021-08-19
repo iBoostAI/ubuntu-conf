@@ -8,7 +8,7 @@ ufw disable && ufw --force enable<br>
 ufw status<br>
 
 apt -y update && apt -y upgrade<br>
-apt -y install apt-transport-https software-properties-common dirmngr gnupg2 ufw unattended-upgrades cron-apt<br>
+apt -y install apt-transport-https software-properties-common dirmngr gnupg2 unattended-upgrades cron-apt<br>
 
 wget https://raw.githubusercontent.com/iboosting/ubuntu-conf/master/usr/bin/chweb -O /usr/bin/chweb && chmod +x /usr/bin/chweb<br>
 rm /etc/apt/sources.list && rm /etc/apt/sources.list~<br>
