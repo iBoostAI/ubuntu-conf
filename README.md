@@ -21,7 +21,7 @@ apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x4F4EA0AAE526
 
 LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php<br>
 
-echo "deb [arch=amd64] http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \<br>
+echo "deb [arch=amd64] http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" \ <br>
     | sudo tee /etc/apt/sources.list.d/nginx.list<br>
 curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -<br>
 
