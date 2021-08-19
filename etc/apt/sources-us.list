@@ -1,11 +1,11 @@
-deb http://archive.ubuntu.com/ubuntu disco main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu disco-security main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu disco-updates main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu disco-proposed main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu disco-backports main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu hirsute main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu hirsute-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu hirsute-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu hirsute-proposed main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu hirsute-backports main restricted universe multiverse
 
-deb-src http://archive.ubuntu.com/ubuntu disco main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu disco-security main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu disco-updates main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu disco-proposed main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu disco-backports main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu hirsute main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu hirsute-security main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu hirsute-updates main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu hirsute-proposed main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu hirsute-backports main restricted universe multiverse
