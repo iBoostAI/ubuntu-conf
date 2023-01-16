@@ -96,7 +96,7 @@ speed() {
     speed_test '2254'  'CSUC (Barcelona, Spain)                   '
     speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
     speed_test '1267'  'Yes Optus (Sydney, Australia)             '	
-    speed_test '15977' 'Speedtest.net (Tokyo, Japan)              '
+    speed_test '16026' 'buriitto internet (Tokyo, Japan)          '
     speed_test '6527'  'kdatacenter.com (Seoul, South Korea)      '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
