@@ -70,37 +70,37 @@ speed_test() {
 }
 
 speed() {
-    speed_test '2947' 'Atlantic Metro (New York, NY, US)'
-    speed_test '3864' 'California Internet Solutions (Los Angeles, CA, US)'
-    speed_test '8705' 'Cable One, Inc. (Chicago, IL, US)'
-    speed_test '6600' 'Data Foundry (Houston, TX, US)'
-    speed_test '6795' 'Unlimited Net, LLC (Indianapolis, IN, US)'
-    speed_test '603' 'Unwired (San Francisco, CA, US)'
-    speed_test '1774' 'Comcast (Boston, MA, US)'
-    speed_test '7192' 'Sharktech Inc. (Denver, CO, US)'
-    speed_test '3595' 'Tulix Systems, Inc (Atlanta, GA, US)'
-    speed_test '2398' 'Studio Funk GmbH & Co. KG (Hamburg, Germany)'
-	speed_test '3932' 'InterNetX GmbH (Munich, Germany)'
-	speed_test '6601' 'NetCologne (Cologne, Germany)'
-    speed_test '3585' 'LeaseWeb (Frankfurt, Germany)'
-	speed_test '2789' 'Vodafone UK (London, United Kingdom)'
-    speed_test '15553' 'Linix Ltd (Liverpool, United Kingdom)'
-    speed_test '3504' 'TNP Ltd. (Manchester, United Kingdom)'    
-    speed_test '2023' 'LaFibre.info (Lyon, France)'
-    speed_test '8195' 'DFOX (Nice, France)'
-    speed_test '395' 'Unidata (Rome, Italy)'
-    speed_test '1434' 'CWNET (Milan, Italy)'
-    speed_test '1486' 'BBBell (Turin, Italy)'
-    speed_test '826' 'Nexicom Inc. (Toronto, ON, Canada)'
-    speed_test '911' 'Fibrenoire Internet (Montreal, QC, Canada)'
-    speed_test '1493' 'Voyageur Internet (Winnipeg, MB, Canada)'
-    speed_test '1267' 'Yes Optus (Sydney, Australia)'
-    speed_test '1680' 'Adamo (Madrid, Spain)'
-    speed_test '2254' 'CSUC (Barcelona, Spain)'
-    speed_test '3386' 'NFOrce Entertainment B.V. (Amsterdam, Netherlands)'
-    speed_test '13188' 'Renaissance Learning Inc (Tokyo, Japan)'
-    speed_test '6527' 'kdatacenter.com (Seoul, South Korea)'
-    speed_test '3633' 'China Telecom (Shanghai, China)'
+    speed_test '2947'  'Atlantic Metro (New York, NY, US)         '
+    speed_test '3864'  'California IS (Los Angeles, CA, US)       '
+    speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
+    speed_test '6600'  'Data Foundry (Houston, TX, US)            '
+    speed_test '6795'  'Unlimited Net (Indianapolis, IN, US)      '
+    speed_test '603'   'Unwired (San Francisco, CA, US)           '
+    speed_test '1774'  'Comcast (Boston, MA, US)                  '
+    speed_test '7192'  'Sharktech Inc.Denver, CO, US)             '
+    speed_test '3595'  'Tulix Systems (Atlanta, GA, US)           '
+    speed_test '2398'  'Studio Funk GmbH (Hamburg, Germany)       '
+	speed_test '3932'  'InterNetX GmbH (Munich, Germany)          '
+	speed_test '6601'  'NetCologne (Cologne, Germany)             '
+    speed_test '3585'  'LeaseWeb (Frankfurt, Germany)             '
+	speed_test '2789'  'Vodafone UK (London, United Kingdom)      '
+    speed_test '15553' 'Linix Ltd (Liverpool, United Kingdom)     '
+    speed_test '3504'  'TNP Ltd. (Manchester, United Kingdom)     '    
+    speed_test '2023'  'LaFibre.info (Lyon, France)               '
+    speed_test '8195'  'DFOX (Nice, France)                       '
+    speed_test '395'   'Unidata (Rome, Italy)                     '
+    speed_test '1434'  'CWNET (Milan, Italy)                      '
+    speed_test '1486'  'BBBell (Turin, Italy)                     '
+    speed_test '826'   'Nexicom Inc (Toronto, ON, Canada)         '
+    speed_test '911'   'Fibrenoire Internet (Montreal, QC, Canada)'
+    speed_test '1493'  'Voyageur Internet (Winnipeg, MB, Canada)  '
+    speed_test '1267'  'Yes Optus (Sydney, Australia)             '
+    speed_test '1680'  'Adamo (Madrid, Spain)                     '
+    speed_test '2254'  'CSUC (Barcelona, Spain)                   '
+    speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
+    speed_test '13188'  'Renaissance Learning (Tokyo, Japan)      '
+    speed_test '6527'  'kdatacenter.com (Seoul, South Korea)      '
+    speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
 
 io_test() {
@@ -241,7 +241,7 @@ install_speedtest() {
         mkdir -p speedtest-cli && tar zxf speedtest.tgz -C ./speedtest-cli && chmod +x ./speedtest-cli/speedtest
         rm -f speedtest.tgz
     fi
-    printf "%-52s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
+    printf "%-45s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
 }
 
 print_intro() {
