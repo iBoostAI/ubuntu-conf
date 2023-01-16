@@ -70,7 +70,6 @@ speed_test() {
 }
 
 speed() {
-    speed_test '2947'  'Atlantic Metro (New York, NY, US)         '
     speed_test '3864'  'California IS (Los Angeles, CA, US)       '
     speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
     speed_test '6795'  'Unlimited Net (Indianapolis, IN, US)      '
@@ -240,7 +239,7 @@ install_speedtest() {
         mkdir -p speedtest-cli && tar zxf speedtest.tgz -C ./speedtest-cli && chmod +x ./speedtest-cli/speedtest
         rm -f speedtest.tgz
     fi
-    printf "%-45s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
+    printf "%-43s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
 }
 
 print_intro() {
