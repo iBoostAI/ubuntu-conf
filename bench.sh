@@ -70,8 +70,10 @@ speed_test() {
 }
 
 speed() {
+    speed_test '7672'  'Citybridge (New York, NY, US)             '
     speed_test '3864'  'California IS (Los Angeles, CA, US)       '
     speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
+    speed_test '1763'  'Comcast (Houston, TX, US)                 '	
     speed_test '6795'  'Unlimited Net (Indianapolis, IN, US)      '
     speed_test '603'   'Unwired (San Francisco, CA, US)           '
     speed_test '1774'  'Comcast (Boston, MA, US)                  '
