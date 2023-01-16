@@ -70,17 +70,20 @@ speed_test() {
 }
 
 speed() {
-    speed_test '663' 'Optimum Online (New York, NY, US)'
+    speed_test '2947' 'Atlantic Metro (New York, NY, US)'
     speed_test '3864' 'California Internet Solutions (Los Angeles, CA, US)'
     speed_test '8705' 'Cable One, Inc. (Chicago, IL, US)'
-    speed_test '5032' 'AT&T (Houston, TX, US)'
+    speed_test '6600' 'Data Foundry (Houston, TX, US)'
     speed_test '6795' 'Unlimited Net, LLC (Indianapolis, IN, US)'
     speed_test '603' 'Unwired (San Francisco, CA, US)'
     speed_test '1774' 'Comcast (Boston, MA, US)'
     speed_test '7192' 'Sharktech Inc. (Denver, CO, US)'
     speed_test '3595' 'Tulix Systems, Inc (Atlanta, GA, US)'
     speed_test '2398' 'Studio Funk GmbH & Co. KG (Hamburg, Germany)'
+	speed_test '3932' 'InterNetX GmbH (Munich, Germany)'
+	speed_test '6601' 'NetCologne (Cologne, Germany)'
     speed_test '3585' 'LeaseWeb (Frankfurt, Germany)'
+	speed_test '2789' 'Vodafone UK (London, United Kingdom)'
     speed_test '15553' 'Linix Ltd (Liverpool, United Kingdom)'
     speed_test '3504' 'TNP Ltd. (Manchester, United Kingdom)'    
     speed_test '2023' 'LaFibre.info (Lyon, France)'
