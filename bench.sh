@@ -249,13 +249,10 @@ install_speedtest() {
 
 # Get System information
 get_system_info() {
-	host=$( hostname )
     cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo | sed 's/^[ \t]*//;s/[ \t]*$//' )
     cores=$( awk -F: '/processor/ {core++} END {print core}' /proc/cpuinfo )
     freq=$( awk -F'[ :]' '/cpu MHz/ {print $4;exit}' /proc/cpuinfo )
     ccache=$( awk -F: '/cache size/ {cache=$2} END {print cache}' /proc/cpuinfo | sed 's/^[ \t]*//;s/[ \t]*$//' )
-    cpu_aes=$( grep -i 'aes' /proc/cpuinfo )
-    cpu_virt=$( grep -Ei 'vmx|svm' /proc/cpuinfo )
     tram=$( LANG=C; free | awk '/Mem/ {print $2}' )
     tram=$( calc_size $tram )
     uram=$( LANG=C; free | awk '/Mem/ {print $3}' )
@@ -286,9 +283,7 @@ get_system_info() {
 }
 # Print System information
 print_system_info() {
-    if [ -n "$host" ]; then
-        echo " Host Name          : $(_blue "$host")"
-    fi
+
     if [ -n "$cname" ]; then
         echo " CPU Model          : $(_blue "$cname")"
     else
