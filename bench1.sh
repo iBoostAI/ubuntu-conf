@@ -57,8 +57,8 @@ next() {
 
 speed_test() {
     local nodeName="$2"
-    [ -z "$1" ] && ./speedtest-cli/speedtest --no-download --progress=no --accept-license --accept-gdpr > ./speedtest-cli/speedtest.log 2>&1 || \
-    ./speedtest-cli/speedtest --no-download --progress=no --server-id=$1 --accept-license --accept-gdpr > ./speedtest-cli/speedtest.log 2>&1
+    [ -z "$1" ] && ./speedtest-cli/speedtest --progress=no --accept-license --accept-gdpr --no-download > ./speedtest-cli/speedtest.log 2>&1 || \
+    ./speedtest-cli/speedtest --progress=no --server-id=$1 --accept-license --accept-gdpr --no-download > ./speedtest-cli/speedtest.log 2>&1
     if [ $? -eq 0 ]; then
         local up_speed=$(awk '/Upload/{print $3" "$4}' ./speedtest-cli/speedtest.log)
         local latency=$(awk '/Latency/{print $2" "$3}' ./speedtest-cli/speedtest.log)
@@ -240,7 +240,7 @@ install_speedtest() {
         mkdir -p speedtest-cli && tar zxf speedtest.tgz -C ./speedtest-cli && chmod +x ./speedtest-cli/speedtest
         rm -f speedtest.tgz
     fi
-    printf "%-43s%-18s%-12s\n" " Node Name" "Upload Speed" "Latency"
+    printf "%-43s%-18s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
 }
 
 print_intro() {
