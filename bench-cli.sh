@@ -57,8 +57,8 @@ next() {
 
 speed_test() {
     local nodeName="$2"
-    [ -z "$1" ] && ./speedtest-cli/speedtest --progress=no > ./speedtest-cli/speedtest.log 2>&1 || \
-    ./speedtest-cli/speedtest --progress=no --server-id=$1 > ./speedtest-cli/speedtest.log 2>&1
+    [ -z "$1" ] && ./speedtest-cli/speedtest > ./speedtest-cli/speedtest.log 2>&1 || \
+    ./speedtest-cli/speedtest --server $1 > ./speedtest-cli/speedtest.log 2>&1
     if [ $? -eq 0 ]; then
         local dl_speed=$(awk '/Download/{print $3" "$4}' ./speedtest-cli/speedtest.log)
         local up_speed=$(awk '/Upload/{print $3" "$4}' ./speedtest-cli/speedtest.log)
@@ -234,8 +234,8 @@ install_speedtest() {
             sys_bit="armel"
         fi
         [ -z "${sys_bit}" ] && _red "Error: Unsupported system architecture (${sysarch}).\n" && exit 1
-        url1="https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-${sys_bit}.tgz"
-        url2="https://dl.lamp.sh/files/ookla-speedtest-1.2.0-linux-${sys_bit}.tgz"
+        url1="https://codeload.github.com/sivel/speedtest-cli/tar.gz/refs/tags/v2.1.3"
+        url2="https://github.com/sivel/speedtest-cli/archive/refs/tags/v2.1.3.tar.gz"
         wget --no-check-certificate -q -T10 -O speedtest.tgz ${url1}
         if [ $? -ne 0 ]; then
             wget --no-check-certificate -q -T10 -O speedtest.tgz ${url2}
