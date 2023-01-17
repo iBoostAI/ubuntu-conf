@@ -70,7 +70,7 @@ speed_test() {
 }
 
 speed() {
-    speed_test '10546' 'Sprint (New York, NY, US)                 '
+    speed_test '11637'  'LINK Telecom (New York, NY, US)          '
     speed_test '3864'  'California IS (Los Angeles, CA, US)       '
     speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
     speed_test '1763'  'Comcast (Houston, TX, US)                 '	
@@ -83,10 +83,10 @@ speed() {
     speed_test '911'   'Fibrenoire Internet (Montreal, QC, Canada)'
     speed_test '1493'  'Voyageur Internet (Winnipeg, MB, Canada)  '	
     speed_test '2398'  'Studio Funk GmbH (Hamburg, Germany)       '
-	speed_test '7716'  'Cuegee IT GmbH (Dusseldorf, Germany)      '
-	speed_test '6601'  'NetCologne (Cologne, Germany)             '
+    speed_test '7716'  'Cuegee IT GmbH (Dusseldorf, Germany)      '
+    speed_test '6601'  'NetCologne (Cologne, Germany)             '
     speed_test '7560'  '23media GmbH (Frankfurt, Germany)         '
-	speed_test '8281'  'Freethought (London, United Kingdom)      '
+    speed_test '8281'  'Freethought (London, United Kingdom)      '
     speed_test '15553' 'Linix Ltd (Liverpool, United Kingdom)     '
     speed_test '3504'  'TNP Ltd. (Manchester, United Kingdom)     '    
     speed_test '2023'  'LaFibre.info (Lyon, France)               '
