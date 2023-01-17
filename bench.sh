@@ -247,12 +247,6 @@ install_speedtest() {
     printf "%-43s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
 }
 
-print_intro() {
-    echo "-------------------- A Bench.sh Script By Teddysun -------------------"
-    echo " Version            : $(_green v2022-06-01)"
-    echo " Usage              : $(_red "wget -qO- bench.sh | bash")"
-}
-
 # Get System information
 get_system_info() {
 	host=$( hostname )
@@ -308,16 +302,6 @@ print_system_info() {
     if [ -n "$ccache" ]; then
         echo " CPU Cache          : $(_blue "$ccache")"
     fi
-    if [ -n "$cpu_aes" ]; then
-        echo " AES-NI             : $(_green "Enabled")"
-    else
-        echo " AES-NI             : $(_red "Disabled")"
-    fi
-    if [ -n "$cpu_virt" ]; then
-        echo " VM-x/AMD-V         : $(_green "Enabled")"
-    else
-        echo " VM-x/AMD-V         : $(_red "Disabled")"
-    fi
     echo " Total Disk         : $(_yellow "$disk_total_size") $(_blue "($disk_used_size Used)")"
     echo " Total Mem          : $(_yellow "$tram") $(_blue "($uram Used)")"
     if [ "$swap" != "0" ]; then
@@ -326,7 +310,6 @@ print_system_info() {
     echo " System uptime      : $(_blue "$up")"
     echo " Load average       : $(_blue "$load")"
     echo " OS                 : $(_blue "$opsy")"
-    echo " Arch               : $(_blue "$arch ($lbit Bit)")"
     echo " Kernel             : $(_blue "$kern")"
     echo " TCP CC             : $(_yellow "$tcpctrl")"
     echo " Virtualization     : $(_blue "$virt")"
@@ -379,8 +362,7 @@ start_time=$(date +%s)
 get_system_info
 check_virt
 clear
-print_intro
-next
+
 print_system_info
 ipv4_info
 next
