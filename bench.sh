@@ -70,7 +70,7 @@ speed_test() {
 }
 
 speed() {
-    speed_test '10591' 'Charter Communications (New York, NY, US) '
+    speed_test '10268' 'Interoute VDC (New York, NY, US)          '
     speed_test '3864'  'California IS (Los Angeles, CA, US)       '
     speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
     speed_test '1763'  'Comcast (Houston, TX, US)                 '	
@@ -80,8 +80,8 @@ speed() {
     speed_test '7192'  'Sharktech Inc.Denver, CO, US)             '
     speed_test '3595'  'Tulix Systems (Atlanta, GA, US)           '
     speed_test '826'   'Nexicom Inc (Toronto, ON, Canada)         '
-    speed_test '911'   'Fibrenoire Internet (Montreal, QC, Canada)'
-    speed_test '1493'  'Voyageur Internet (Winnipeg, MB, Canada)  '	
+    speed_test '911'   'Fibrenoire Internet (Montreal, Canada)    '
+    speed_test '1493'  'Voyageur Internet (Winnipeg, Canada)      '	
     speed_test '2398'  'Studio Funk GmbH (Hamburg, Germany)       '
     speed_test '5146'  'Consultix (Bremen, Germany)               '
     speed_test '6601'  'NetCologne (Cologne, Germany)             '
