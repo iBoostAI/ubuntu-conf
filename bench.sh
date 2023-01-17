@@ -70,7 +70,7 @@ speed_test() {
 }
 
 speed() {
-    speed_test '6030'  'fdcservers.net (New York, NY, US)         '
+    speed_test '7546'  'UNMETERED.Online (New York, NY, US)       '
     speed_test '3864'  'California IS (Los Angeles, CA, US)       '
     speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
     speed_test '1763'  'Comcast (Houston, TX, US)                 '	
@@ -98,7 +98,7 @@ speed() {
     speed_test '2254'  'CSUC (Barcelona, Spain)                   '
     speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
     speed_test '1267'  'Yes Optus (Sydney, Australia)             '	
-    speed_test '16026' 'buriitto internet (Tokyo, Japan)          '
+    speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
     speed_test '6527'  'kdatacenter.com (Seoul, South Korea)      '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
