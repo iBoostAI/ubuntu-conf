@@ -241,7 +241,7 @@ install_speedtest() {
             wget --no-check-certificate -q -T10 -O speedtest.tgz ${url2}
             [ $? -ne 0 ] && _red "Error: Failed to download speedtest-cli.\n" && exit 1
         fi
-        tar zxf speedtest.tgz && mv speedtest-cli-2.1.3 speedtest-cli && chmod +x ./speedtest-cli/speedtest
+        tar zxf speedtest.tgz && mv speedtest-cli-2.1.3 speedtest-cli && chmod +x ./speedtest-cli/speedtest.py
         rm -f speedtest.tgz
     fi
     printf "%-43s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
