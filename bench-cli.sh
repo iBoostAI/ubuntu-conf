@@ -57,8 +57,8 @@ next() {
 
 speed_test() {
     local nodeName="$2"
-    [ -z "$1" ] && ./speedtest-cli/speedtest > ./speedtest-cli/speedtest.log 2>&1 || \
-    ./speedtest-cli/speedtest --server $1 > ./speedtest-cli/speedtest.log 2>&1
+    [ -z "$1" ] && ./speedtest-cli/speedtest.py > ./speedtest-cli/speedtest.log 2>&1 || \
+    ./speedtest-cli/speedtest.py --server $1 > ./speedtest-cli/speedtest.log 2>&1
     if [ $? -eq 0 ]; then
         local dl_speed=$(awk '/Download/{print $3" "$4}' ./speedtest-cli/speedtest.log)
         local up_speed=$(awk '/Upload/{print $3" "$4}' ./speedtest-cli/speedtest.log)
