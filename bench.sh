@@ -70,6 +70,7 @@ speed_test() {
 }
 
 speed() {
+    speed_test '1782'  'Comcast (Seattle, WA, US)                 '
     speed_test '17545' 'Planet Networks (Parsippany, NJ, US)      '
     speed_test '3864'  'California IS (Los Angeles, CA, US)       '
     speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
@@ -84,7 +85,6 @@ speed() {
     speed_test '4207'  'Shaw Communications (Calgary, Canada)     '
     speed_test '1493'  'Voyageur Internet (Winnipeg, Canada)      '
     speed_test '3049'  'TELUS (Vancouver, BC, Canada)             '
-    speed_test '3213'  'Triara (Mexico City, Mexico)              '
     speed_test '2398'  'Studio Funk GmbH (Hamburg, Germany)       '
     speed_test '5747'  'PLUTEX GmbH (Bremen, Germany)             '
     speed_test '6601'  'NetCologne (Cologne, Germany)             '
