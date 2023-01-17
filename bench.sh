@@ -70,7 +70,7 @@ speed_test() {
 }
 
 speed() {
-    speed_test '7546'  'UNMETERED.Online (New York, NY, US)       '
+    speed_test '10546' 'Sprint (New York, NY, US)                 '
     speed_test '3864'  'California IS (Los Angeles, CA, US)       '
     speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
     speed_test '1763'  'Comcast (Houston, TX, US)                 '	
