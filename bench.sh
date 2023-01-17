@@ -104,6 +104,11 @@ speed() {
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
     speed_test '6527'  'kdatacenter.com (Seoul, South Korea)      '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
+    speed_test '9633'  'China Broadband (Shanghai, China)         '
+    speed_test '16719' 'China Mobile Shanghai (Shanghai, China)   '
+    speed_test '16803' 'China Mobile Shanghai (Shanghai, China)   '
+    speed_test '17019' 'CoreLink Inc,                             '
+    speed_test '22145' 'ESUN Technology (Shanghai, China)         '	
 }
 
 io_test() {
