@@ -69,7 +69,7 @@ speed_test() {
 }
 
 speed() {
-    speed_test '3633'  'China Telecom (Shanghai, China)           '
+    speed_test '3633'  'China Telecom (Shanghai, China)           ' ' --no-download'
 }
 
 io_test() {
