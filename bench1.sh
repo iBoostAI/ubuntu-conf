@@ -69,36 +69,6 @@ speed_test() {
 }
 
 speed() {
-    speed_test '17545' 'Planet Networks (Parsippany, NJ, US)      '
-    speed_test '3864'  'California IS (Los Angeles, CA, US)       '
-    speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
-    speed_test '1763'  'Comcast (Houston, TX, US)                 '	
-    speed_test '6795'  'Unlimited Net (Indianapolis, IN, US)      '
-    speed_test '603'   'Unwired (San Francisco, CA, US)           '
-    speed_test '1774'  'Comcast (Boston, MA, US)                  '
-    speed_test '7192'  'Sharktech Inc.Denver, CO, US)             '
-    speed_test '3595'  'Tulix Systems (Atlanta, GA, US)           '
-    speed_test '826'   'Nexicom Inc (Toronto, ON, Canada)         '
-    speed_test '911'   'Fibrenoire Internet (Montreal, Canada)    '
-    speed_test '1493'  'Voyageur Internet (Winnipeg, Canada)      '	
-    speed_test '2398'  'Studio Funk GmbH (Hamburg, Germany)       '
-    speed_test '5146'  'Consultix (Bremen, Germany)               '
-    speed_test '6601'  'NetCologne (Cologne, Germany)             '
-    speed_test '8040'  'IP-Projects GmbH (Frankfurt, Germany)     '
-    speed_test '6151'  'Burstfire Networks (London, UK)           '
-    speed_test '15553' 'Linix Ltd (Liverpool, UK)                 '
-    speed_test '3504'  'TNP Ltd (Manchester, UK)                  '    
-    speed_test '2023'  'LaFibre.info (Lyon, France)               '
-    speed_test '8195'  'DFOX (Nice, France)                       '
-    speed_test '395'   'Unidata (Rome, Italy)                     '
-    speed_test '1434'  'CWNET (Milan, Italy)                      '
-    speed_test '1486'  'BBBell (Turin, Italy)                     '
-    speed_test '1680'  'Adamo (Madrid, Spain)                     '
-    speed_test '2254'  'CSUC (Barcelona, Spain)                   '
-    speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
-    speed_test '1267'  'Yes Optus (Sydney, Australia)             '	
-    speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
-    speed_test '6527'  'kdatacenter.com (Seoul, South Korea)      '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
 
@@ -240,7 +210,7 @@ install_speedtest() {
         mkdir -p speedtest-cli && tar zxf speedtest.tgz -C ./speedtest-cli && chmod +x ./speedtest-cli/speedtest
         rm -f speedtest.tgz
     fi
-    printf "%-43s%-18s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
+    printf "%-43s%-18s%-12s\n" " Node Name" "Upload Speed" "Latency"
 }
 
 print_intro() {
