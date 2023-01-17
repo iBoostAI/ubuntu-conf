@@ -70,7 +70,7 @@ speed_test() {
 }
 
 speed() {
-    speed_test '10390' 'Speedtest.net (New York, NY, US)          '
+    speed_test '17545' 'Planet Networks (Parsippany, NJ, US)      '
     speed_test '3864'  'California IS (Los Angeles, CA, US)       '
     speed_test '8705'  'Cable One, Inc. (Chicago, IL, US)         '
     speed_test '1763'  'Comcast (Houston, TX, US)                 '	
@@ -231,8 +231,8 @@ install_speedtest() {
             sys_bit="armel"
         fi
         [ -z "${sys_bit}" ] && _red "Error: Unsupported system architecture (${sysarch}).\n" && exit 1
-        url1="https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-${sys_bit}.tgz"
-        url2="https://dl.lamp.sh/files/ookla-speedtest-1.1.1-linux-${sys_bit}.tgz"
+        url1="https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-${sys_bit}.tgz"
+        url2="https://dl.lamp.sh/files/ookla-speedtest-1.2.0-linux-${sys_bit}.tgz"
         wget --no-check-certificate -q -T10 -O speedtest.tgz ${url1}
         if [ $? -ne 0 ]; then
             wget --no-check-certificate -q -T10 -O speedtest.tgz ${url2}
