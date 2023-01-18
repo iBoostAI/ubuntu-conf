@@ -194,14 +194,8 @@ check_virt(){
 
 ipv4_info() {
     local org="$(wget -q -T10 -O- ipinfo.io/org)"
-    local city="$(wget -q -T10 -O- ipinfo.io/city)"
-    local country="$(wget -q -T10 -O- ipinfo.io/country)"
-    local region="$(wget -q -T10 -O- ipinfo.io/region)"
     if [[ -n "$org" ]]; then
         echo " Organization       : $(_blue "$org")"
-    fi
-    if [[ -n "$city" && -n "country" ]]; then
-        echo " Location           : $(_blue "$city / $country")"
     fi
 }
 
