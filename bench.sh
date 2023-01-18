@@ -80,7 +80,7 @@ speed() {
     speed_test '1774'  'Comcast (Boston, MA, US)                  '
     speed_test '7192'  'Sharktech Inc (Denver, CO, US)            '
     speed_test '3595'  'Tulix Systems (Atlanta, GA, US)           '
-    speed_test '9383'  'Sneaker Server (San Jose, CA, US)         '
+    speed_test '10384' 'Speedtest.net (San Jose, CA, US)          '
     speed_test '603'   'Unwired (San Francisco, CA, US)           '
     speed_test '4207'  'Shaw Communications (Calgary, Canada)     '
     speed_test '6421'  'Chrysalis Biosciences (Madison, WI, US)   '
@@ -102,7 +102,6 @@ speed() {
     speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
     speed_test '1267'  'Yes Optus (Sydney, Australia)             '
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
-    speed_test '6527'  'kdatacenter.com (Seoul, South Korea)      '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
 
