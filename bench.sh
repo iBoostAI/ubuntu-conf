@@ -80,7 +80,7 @@ speed() {
     speed_test '1774'  'Comcast (Boston, MA, US)                  '
     speed_test '7192'  'Sharktech Inc (Denver, CO, US)            '
     speed_test '3595'  'Tulix Systems (Atlanta, GA, US)           '
-    speed_test '11899' 'Janus Networks (San Jose, CA, US)         '
+    speed_test '15786' 'Sprint (San Jose, CA, US)                 '
     speed_test '603'   'Unwired (San Francisco, CA, US)           '
     speed_test '4207'  'Shaw Communications (Calgary, Canada)     '
     speed_test '6421'  'Chrysalis Biosciences (Madison, WI, US)   '
