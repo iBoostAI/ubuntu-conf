@@ -80,10 +80,10 @@ speed() {
     speed_test '1774'  'Comcast (Boston, MA, US)                  '
     speed_test '7192'  'Sharktech Inc (Denver, CO, US)            '
     speed_test '3595'  'Tulix Systems (Atlanta, GA, US)           '
-    speed_test '5479'  'Sonic.net (San Jose, CA, US)              '
+    speed_test '9383'  'Sneaker Server (San Jose, CA, US)         '
     speed_test '603'   'Unwired (San Francisco, CA, US)           '
     speed_test '4207'  'Shaw Communications (Calgary, Canada)     '
-    speed_test '10724' 'Information Tech Pro (Madison, WI, US)    '
+    speed_test '6421'  'Chrysalis Biosciences (Madison, WI, US)   '
     speed_test '3049'  'TELUS (Vancouver, BC, Canada)             '
     speed_test '2398'  'Studio Funk GmbH (Hamburg, Germany)       '
     speed_test '5747'  'PLUTEX GmbH (Bremen, Germany)             '
@@ -203,12 +203,6 @@ ipv4_info() {
     if [[ -n "$city" && -n "country" ]]; then
         echo " Location           : $(_blue "$city / $country")"
     fi
-    if [[ -n "$region" ]]; then
-        echo " Region             : $(_yellow "$region")"
-    fi
-    if [[ -z "$org" ]]; then
-        echo " Region             : $(_red "No ISP detected")"
-    fi
 }
 
 install_speedtest() {
@@ -247,10 +241,6 @@ install_speedtest() {
     printf "%-43s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
 }
 
-print_intro() {
-    echo "-------------------- A Bench.sh Script By Teddysun -------------------"
-
-}
 # Get System information
 get_system_info() {
     host=$( hostname )
@@ -361,10 +351,7 @@ print_end_time() {
 ! _exists "free" && _red "Error: free command not found.\n" && exit 1
 start_time=$(date +%s)
 get_system_info
-check_virt
 clear
-print_intro
-next
 print_system_info
 ipv4_info
 next
