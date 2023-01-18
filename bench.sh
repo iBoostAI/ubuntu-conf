@@ -57,8 +57,8 @@ next() {
 
 speed_test() {
     local nodeName="$2"
-    [ -z "$1" ] && ./speedtest-cli/speedtest --progress=no > ./speedtest-cli/speedtest.log 2>&1 || \
-    ./speedtest-cli/speedtest --progress=no --server-id=$1 > ./speedtest-cli/speedtest.log 2>&1
+    [ -z "$1" ] && ./speedtest-cli/speedtest --progress=no --accept-license --accept-gdpr > ./speedtest-cli/speedtest.log 2>&1 || \
+    ./speedtest-cli/speedtest --progress=no --server-id=$1 --accept-license --accept-gdpr > ./speedtest-cli/speedtest.log 2>&1
     if [ $? -eq 0 ]; then
         local dl_speed=$(awk '/Download/{print $3" "$4}' ./speedtest-cli/speedtest.log)
         local up_speed=$(awk '/Upload/{print $3" "$4}' ./speedtest-cli/speedtest.log)
@@ -247,6 +247,10 @@ install_speedtest() {
     printf "%-43s%-18s%-20s%-12s\n" " Node Name" "Upload Speed" "Download Speed" "Latency"
 }
 
+print_intro() {
+    echo "-------------------- A Bench.sh Script By Teddysun -------------------"
+
+}
 # Get System information
 get_system_info() {
     host=$( hostname )
@@ -359,7 +363,8 @@ start_time=$(date +%s)
 get_system_info
 check_virt
 clear
-
+print_intro
+next
 print_system_info
 ipv4_info
 next
