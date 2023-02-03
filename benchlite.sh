@@ -77,7 +77,7 @@ speed() {
     speed_test '1267'  'Yes Optus (Sydney, Australia)             '
     speed_test '1782'  'Comcast (Seattle, WA, US)                 '    
     speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '    
-    speed_test '6842'  'Random Systems (Gimhae, South Korea)      '    
+    speed_test '6527'  'KCInfra Inc (Seoul, South Korea)          '    
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
