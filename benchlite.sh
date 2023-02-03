@@ -78,6 +78,7 @@ speed() {
     speed_test '1680'  'Adamo (Madrid, Spain)                     '
     speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
     speed_test '1267'  'Yes Optus (Sydney, Australia)             '
+    speed_test '5249'  'Ookla (Seoul, South Korea)                '    
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
