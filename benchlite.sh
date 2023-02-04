@@ -226,10 +226,6 @@ get_system_info() {
     tram=$( calc_size $tram )
     uram=$( LANG=C; free | awk '/Mem/ {print $3}' )
     uram=$( calc_size $uram )
-    swap=$( LANG=C; free | awk '/Swap/ {print $2}' )
-    swap=$( calc_size $swap )
-    uswap=$( LANG=C; free | awk '/Swap/ {print $3}' )
-    uswap=$( calc_size $uswap )
     up=$( awk '{a=$1/86400;b=($1%86400)/3600;c=($1%3600)/60} {printf("%d days, %d hour %d min\n",a,b,c)}' /proc/uptime )
     if _exists "w"; then
         load=$( LANG=C; w | head -1 | awk -F'load average:' '{print $2}' | sed 's/^[ \t]*//;s/[ \t]*$//' )
@@ -270,41 +266,11 @@ print_system_info() {
     fi
     echo " Total Disk         : $(_yellow "$disk_total_size") $(_blue "($disk_used_size Used)")"
     echo " Total Mem          : $(_yellow "$tram") $(_blue "($uram Used)")"
-    if [ "$swap" != "0" ]; then
-        echo " Total Swap         : $(_blue "$swap ($uswap Used)")"
-    fi
     echo " System uptime      : $(_blue "$up")"
     echo " Load average       : $(_blue "$load")"
     echo " OS                 : $(_blue "$opsy")"
     echo " Kernel             : $(_blue "$kern")"
     echo " TCP CC             : $(_yellow "$tcpctrl")"
-}
-
-print_io_test() {
-    freespace=$( df -m . | awk 'NR==2 {print $4}' )
-    if [ -z "${freespace}" ]; then
-        freespace=$( df -m . | awk 'NR==3 {print $3}' )
-    fi
-    if [ ${freespace} -gt 1024 ]; then
-        writemb=2048
-        io1=$( io_test ${writemb} )
-        echo " I/O Speed(1st run) : $(_yellow "$io1")"
-        io2=$( io_test ${writemb} )
-        echo " I/O Speed(2nd run) : $(_yellow "$io2")"
-        io3=$( io_test ${writemb} )
-        echo " I/O Speed(3rd run) : $(_yellow "$io3")"
-        ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
-        [ "`echo $io1 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw1=$( awk 'BEGIN{print '$ioraw1' * 1024}' )
-        ioraw2=$( echo $io2 | awk 'NR==1 {print $1}' )
-        [ "`echo $io2 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw2=$( awk 'BEGIN{print '$ioraw2' * 1024}' )
-        ioraw3=$( echo $io3 | awk 'NR==1 {print $1}' )
-        [ "`echo $io3 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw3=$( awk 'BEGIN{print '$ioraw3' * 1024}' )
-        ioall=$( awk 'BEGIN{print '$ioraw1' + '$ioraw2' + '$ioraw3'}' )
-        ioavg=$( awk 'BEGIN{printf "%.1f", '$ioall' / 3}' )
-        echo " I/O Speed(average) : $(_yellow "$ioavg MB/s")"
-    else
-        echo " $(_red "Not enough space for I/O Speed test!")"
-    fi
 }
 
 print_end_time() {
