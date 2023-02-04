@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # Description: A Bench Script by Teddysun
 #
@@ -6,12 +6,11 @@
 # Thanks: LookBack <admin@dwhd.org>
 # URL: https://teddysun.com/444.html
 # https://github.com/teddysun/across/blob/master/bench.sh
-#
 
 script_name=$(basename -- "$0")
 
 if pidof -x "$script_name" -o $$ >/dev/null;then
-   echo "An another instance of this script is already running, please clear all the sessions of this script befor>
+   echo "An another instance of this script is already running>
    exit 1
 fi
 
