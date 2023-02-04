@@ -280,33 +280,6 @@ print_system_info() {
     echo " TCP CC             : $(_yellow "$tcpctrl")"
 }
 
-print_io_test() {
-    freespace=$( df -m . | awk 'NR==2 {print $4}' )
-    if [ -z "${freespace}" ]; then
-        freespace=$( df -m . | awk 'NR==3 {print $3}' )
-    fi
-    if [ ${freespace} -gt 1024 ]; then
-        writemb=2048
-        io1=$( io_test ${writemb} )
-        echo " I/O Speed(1st run) : $(_yellow "$io1")"
-        io2=$( io_test ${writemb} )
-        echo " I/O Speed(2nd run) : $(_yellow "$io2")"
-        io3=$( io_test ${writemb} )
-        echo " I/O Speed(3rd run) : $(_yellow "$io3")"
-        ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
-        [ "`echo $io1 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw1=$( awk 'BEGIN{print '$ioraw1' * 1024}' )
-        ioraw2=$( echo $io2 | awk 'NR==1 {print $1}' )
-        [ "`echo $io2 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw2=$( awk 'BEGIN{print '$ioraw2' * 1024}' )
-        ioraw3=$( echo $io3 | awk 'NR==1 {print $1}' )
-        [ "`echo $io3 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw3=$( awk 'BEGIN{print '$ioraw3' * 1024}' )
-        ioall=$( awk 'BEGIN{print '$ioraw1' + '$ioraw2' + '$ioraw3'}' )
-        ioavg=$( awk 'BEGIN{printf "%.1f", '$ioall' / 3}' )
-        echo " I/O Speed(average) : $(_yellow "$ioavg MB/s")"
-    else
-        echo " $(_red "Not enough space for I/O Speed test!")"
-    fi
-}
-
 print_end_time() {
     end_time=$(date +%s)
     time=$(( ${end_time} - ${start_time} ))
