@@ -77,8 +77,16 @@ speed_test() {
 }
 
 speed() {
-    speed_test '7311'  'M1 Limited (Singapore, Singapore)         '    
-    speed_test '6087'  'Allied Telesis (Fussa-shi, Japan)         '  
+    speed_test '6601'  'NetCologne (Cologne, Germany)             '
+    speed_test '6151'  'Burstfire Networks (London, UK)           '
+    speed_test '2023'  'LaFibre.info (Lyon, France)               '
+    speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
+    speed_test '1267'  'Yes Optus (Sydney, Australia)             '
+    speed_test '3049'  'TELUS (Vancouver, BC, Canada)             '
+    speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '
+    speed_test '7311'  'M1 Limited (Singapore, Singapore)         '
+    speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
+    speed_test '6087'  'Allied Telesis (Fussa-shi, Japan)         '
     speed_test '6405'  'Allied Telesis (Misawa, Japan)            '
     speed_test '8407'  'Allied Telesis (Sagamihara, Japan)        '
 }
