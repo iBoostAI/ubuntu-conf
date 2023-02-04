@@ -10,8 +10,8 @@
 
 script_name=$(basename -- "$0")
 
-if pidof -x "$script_name" -o $$ >/dev/null;then
-   echo "An another instance of this script is already running, please clear all the sessions of this script befor>
+if pidof -x "$script_name" -o $$ >/dev/null; then
+   echo "An another instance of this script is already running, please clear all the sessions of this script before starting a new session"
    exit 1
 fi
 
