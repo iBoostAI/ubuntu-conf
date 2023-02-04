@@ -85,7 +85,7 @@ speed() {
     speed_test '4207'  'Shaw Communications (Calgary, Canada)     '
     speed_test '3049'  'TELUS (Vancouver, BC, Canada)             '
     speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '
-    speed_test '11160' 'SoftLayer (Seoul, South Korea)            '
+    speed_test '13124' 'Moack (Seoul,  South Korea)               '
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
