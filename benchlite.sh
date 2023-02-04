@@ -77,7 +77,7 @@ speed_test() {
 }
 
 speed() {
-    speed_test '6477'  'Satoweb (Sakai, Japan)                    '    
+    speed_test '2213'  'SGIX (Singapore, 	Singapore)              '    
     speed_test '6087'  'Allied Telesis (Fussa-shi, Japan)         '  
     speed_test '6405'  'Allied Telesis (Misawa, Japan)            '
     speed_test '8407'  'Allied Telesis (Sagamihara, Japan)        '
