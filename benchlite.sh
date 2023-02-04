@@ -77,16 +77,10 @@ speed_test() {
 }
 
 speed() {
-    speed_test '6601'  'NetCologne (Cologne, Germany)             '
-    speed_test '6151'  'Burstfire Networks (London, UK)           '
-    speed_test '2023'  'LaFibre.info (Lyon, France)               '
-    speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
-    speed_test '1267'  'Yes Optus (Sydney, Australia)             '
-    speed_test '3049'  'TELUS (Vancouver, BC, Canada)             '
     speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
     speed_test '6508'  'At2wn.com Capital (Yokohama, Japan)       '    
-    speed_test '7509'  'China Telecom (Hangzhou, China)           '    
+    speed_test '7510'  'ASEINet (Tokyo, Japa)                     '    
     speed_test '5396'  'China Telecom (Suzhou, China)             '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
