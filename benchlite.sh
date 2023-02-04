@@ -79,10 +79,10 @@ speed_test() {
 speed() {
     speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
-    speed_test '8193'  'Kamiari (Sendai, Japan)                   '    
-    speed_test '8842'  'Kimagure (Sapporo, Japan)                 '    
-    speed_test '7976'  'Denpa893 (Hikari, Japan)                  '
-    speed_test '6368'  'Gatolabo (Maibara, Japan)                 '
+    speed_test '6766'  'JAIST(ino-lab)	 (Nomi, Japan)             '    
+    speed_test '6476'  'Rxy (individual) (Osaka, Japan)           '    
+    speed_test '7903'  'Haza (Naha, Japan)                        '
+    speed_test '6087'  'Allied Telesis (Fussa-shi, Japan)         '
 }
 
 calc_size() {
