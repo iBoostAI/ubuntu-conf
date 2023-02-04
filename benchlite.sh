@@ -82,7 +82,6 @@ speed() {
     speed_test '2023'  'LaFibre.info (Lyon, France)               '
     speed_test '3386'  'NFOrce Entmt (Amsterdam, Netherlands)     '
     speed_test '1267'  'Yes Optus (Sydney, Australia)             '
-    speed_test '4207'  'Shaw Communications (Calgary, Canada)     '
     speed_test '3049'  'TELUS (Vancouver, BC, Canada)             '
     speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '
     speed_test '13124' 'Moack (Seoul,  South Korea)               '
