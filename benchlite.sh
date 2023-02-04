@@ -85,6 +85,7 @@ speed() {
     speed_test '3049'  'TELUS (Vancouver, BC, Canada)             '
     speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
+    speed_test '6508'  'At2wn.com Capital (Yokohama, Japan)       '    
     speed_test '7509'  'China Telecom (Hangzhou, China)           '    
     speed_test '5396'  'China Telecom (Suzhou, China)             '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
