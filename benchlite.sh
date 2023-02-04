@@ -77,12 +77,10 @@ speed_test() {
 }
 
 speed() {
-    speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '
-    speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
-    speed_test '6766'  'JAIST(ino-lab)	 (Nomi, Japan)             '    
-    speed_test '6476'  'Rxy (individual) (Osaka, Japan)           '    
-    speed_test '7903'  'Haza (Naha, Japan)                        '
-    speed_test '6087'  'Allied Telesis (Fussa-shi, Japan)         '
+    speed_test '6477'  'Satoweb (Sakai, Japan)                    '    
+    speed_test '6087'  'Allied Telesis (Fussa-shi, Japan)         '  
+    speed_test '6405'  'Allied Telesis (Misawa, Japan)            '
+    speed_test '8407'  'Allied Telesis (Sagamihara, Japan)        '
 }
 
 calc_size() {
@@ -263,34 +261,4 @@ print_system_info() {
     echo " Total Mem          : $(_yellow "$tram") $(_blue "($uram Used)")"
     echo " System uptime      : $(_blue "$up")"
     echo " Load average       : $(_blue "$load")"
-    echo " OS                 : $(_blue "$opsy")"
-    echo " Kernel             : $(_blue "$kern")"
-    echo " TCP CC             : $(_yellow "$tcpctrl")"
-}
-
-print_end_time() {
-    end_time=$(date +%s)
-    time=$(( ${end_time} - ${start_time} ))
-    if [ ${time} -gt 60 ]; then
-        min=$(expr $time / 60)
-        sec=$(expr $time % 60)
-        echo " Finished in        : ${min} min ${sec} sec"
-    else
-        echo " Finished in        : ${time} sec"
-    fi
-    date_time=$(date '+%Y-%m-%d %H:%M:%S %Z')
-    echo " Timestamp          : $date_time"
-}
-
-! _exists "wget" && _red "Error: wget command not found.\n" && exit 1
-! _exists "free" && _red "Error: free command not found.\n" && exit 1
-start_time=$(date +%s)
-get_system_info
-clear
-print_system_info
-ipv4_info
-next
-install_speedtest && speed && rm -fr speedtest-cli
-next
-print_end_time
-next
+    echo " OS          
