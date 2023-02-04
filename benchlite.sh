@@ -84,8 +84,9 @@ speed() {
     speed_test '1267'  'Yes Optus (Sydney, Australia)             '
     speed_test '3049'  'TELUS (Vancouver, BC, Canada)             '
     speed_test '2054'  'Viewqwest Pte Ltd (Singapore)             '
-    speed_test '13124' 'Moack (Seoul,  South Korea)               '
     speed_test '6405'  'Allied Telesis Capital (Misawa, Japan)    '
+    speed_test '7509'  'China Telecom (Hangzhou, China)           '    
+    speed_test '5396'  'China Telecom (Suzhou, China)             '
     speed_test '3633'  'China Telecom (Shanghai, China)           '
 }
 
@@ -227,83 +228,4 @@ get_system_info() {
     uram=$( calc_size $uram )
     swap=$( LANG=C; free | awk '/Swap/ {print $2}' )
     swap=$( calc_size $swap )
-    uswap=$( LANG=C; free | awk '/Swap/ {print $3}' )
-    uswap=$( calc_size $uswap )
-    up=$( awk '{a=$1/86400;b=($1%86400)/3600;c=($1%3600)/60} {printf("%d days, %d hour %d min\n",a,b,c)}' /proc/uptime )
-    if _exists "w"; then
-        load=$( LANG=C; w | head -1 | awk -F'load average:' '{print $2}' | sed 's/^[ \t]*//;s/[ \t]*$//' )
-    elif _exists "uptime"; then
-        load=$( LANG=C; uptime | head -1 | awk -F'load average:' '{print $2}' | sed 's/^[ \t]*//;s/[ \t]*$//' )
-    fi
-    opsy=$( get_opsy )
-    arch=$( uname -m )
-    if _exists "getconf"; then
-        lbit=$( getconf LONG_BIT )
-    else
-        echo ${arch} | grep -q "64" && lbit="64" || lbit="32"
-    fi
-    kern=$( uname -r )
-    disk_total_size=$( LANG=C; df -t simfs -t ext2 -t ext3 -t ext4 -t btrfs -t xfs -t vfat -t ntfs -t swap --total 2>/dev/null | grep total | awk '{ print $2 }' )
-    disk_total_size=$( calc_size $disk_total_size )
-    disk_used_size=$( LANG=C; df -t simfs -t ext2 -t ext3 -t ext4 -t btrfs -t xfs -t vfat -t ntfs -t swap --total 2>/dev/null | grep total | awk '{ print $3 }' )
-    disk_used_size=$( calc_size $disk_used_size )
-    tcpctrl=$( sysctl net.ipv4.tcp_congestion_control | awk -F ' ' '{print $3}' )
-}
-# Print System information
-print_system_info() {
-    if [ -n "$host" ]; then
-        echo " Host Name          : $(_blue "$host")"
-    fi
-    if [ -n "$cname" ]; then
-        echo " CPU Model          : $(_blue "$cname")"
-    else
-        echo " CPU Model          : $(_blue "CPU model not detected")"
-    fi
-    if [ -n "$freq" ]; then
-        echo " CPU Cores          : $(_blue "$cores @ $freq MHz")"
-    else
-        echo " CPU Cores          : $(_blue "$cores")"
-    fi
-    if [ -n "$ccache" ]; then
-        echo " CPU Cache          : $(_blue "$ccache")"
-    fi
-    echo " Total Disk         : $(_yellow "$disk_total_size") $(_blue "($disk_used_size Used)")"
-    echo " Total Mem          : $(_yellow "$tram") $(_blue "($uram Used)")"
-    if [ "$swap" != "0" ]; then
-        echo " Total Swap         : $(_blue "$swap ($uswap Used)")"
-    fi
-    echo " System uptime      : $(_blue "$up")"
-    echo " Load average       : $(_blue "$load")"
-    echo " OS                 : $(_blue "$opsy")"
-    echo " Kernel             : $(_blue "$kern")"
-    echo " TCP CC             : $(_yellow "$tcpctrl")"
-}
-
-print_end_time() {
-    end_time=$(date +%s)
-    time=$(( ${end_time} - ${start_time} ))
-    if [ ${time} -gt 60 ]; then
-        min=$(expr $time / 60)
-        sec=$(expr $time % 60)
-        echo " Finished in        : ${min} min ${sec} sec"
-    else
-        echo " Finished in        : ${time} sec"
-    fi
-    date_time=$(date '+%Y-%m-%d %H:%M:%S %Z')
-    echo " Timestamp          : $date_time"
-}
-
-! _exists "wget" && _red "Error: wget command not found.\n" && exit 1
-! _exists "free" && _red "Error: free command not found.\n" && exit 1
-start_time=$(date +%s)
-get_system_info
-clear
-print_system_info
-ipv4_info
-next
-print_io_test
-next
-install_speedtest && speed && rm -fr speedtest-cli
-next
-print_end_time
-next
+  
