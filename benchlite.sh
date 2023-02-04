@@ -77,7 +77,7 @@ speed_test() {
 }
 
 speed() {
-    speed_test '4235'  'StarHub (Singapore, Singapore)            '    
+    speed_test '7311'  'M1 Limited (Singapore, Singapore)         '    
     speed_test '6087'  'Allied Telesis (Fussa-shi, Japan)         '  
     speed_test '6405'  'Allied Telesis (Misawa, Japan)            '
     speed_test '8407'  'Allied Telesis (Sagamihara, Japan)        '
