@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chown -R www-data:www-data /var/www
-find /var/www -type d -exec chmod 755 {} \;
-find /var/www -type f ! -name '*.php' -exec chmod 644 {} \;
-find /var/www -type f -name '*.php' -exec chmod 755 {} \;
+sudo chown -R www-data:www-data /var/www
+sudo find /var/www -type d -exec sudo chmod 755 {} \;
+sudo find /var/www -type f ! -name '*.php' -exec sudo chmod 644 {} \;
+sudo find /var/www -type f -name '*.php' -exec sudo chmod 755 {} \;
