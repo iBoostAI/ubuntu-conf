@@ -1,6 +1,27 @@
 #!/bin/bash
 
+# 处理 /var/www 目录
 sudo chown -R www-data:www-data /var/www
 sudo find /var/www -type d -exec sudo chmod 755 {} \;
-sudo find /var/www -type f ! -name '*.php' -exec sudo chmod 644 {} \;
+sudo find /var/www -type f ! -name '*.php' ! -name '*.py' ! -name '*.sh' -exec sudo chmod 644 {} \;
 sudo find /var/www -type f -name '*.php' -exec sudo chmod 755 {} \;
+sudo find /var/www -type f \( -name '*.py' -o -name '*.sh' \) -exec sudo chmod 755 {} \;
+
+# 处理 /home 下的每个用户目录
+for userdir in /home/*/ ; do
+    # 跳过 lost+found 等特殊目录
+    [ -d "$userdir" ] || continue
+    
+    # 设置用户目录权限
+    sudo chmod 755 "$userdir"
+    
+    # 设置用户目录下的目录权限为 755
+    sudo find "$userdir" -type d -exec sudo chmod 755 {} \;
+    
+    # 普通文件权限设置为 644
+    sudo find "$userdir" -type f ! -name '*.php' ! -name '*.py' ! -name '*.sh' -exec sudo chmod 644 {} \;
+    
+    # PHP、Python 和 Shell 脚本设置为 755
+    sudo find "$userdir" -type f -name '*.php' -exec sudo chmod 755 {} \;
+    sudo find "$userdir" -type f \( -name '*.py' -o -name '*.sh' \) -exec sudo chmod 755 {} \;
+done
