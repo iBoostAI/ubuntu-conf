@@ -12,16 +12,34 @@ for userdir in /home/*/ ; do
     # 跳过 lost+found 等特殊目录
     [ -d "$userdir" ] || continue
     
+    # 获取目录所有者
+    owner=$(stat -c '%U' "$userdir")
+    
     # 设置用户目录权限
     sudo chmod 755 "$userdir"
     
     # 设置用户目录下的目录权限为 755
     sudo find "$userdir" -type d -exec sudo chmod 755 {} \;
     
-    # 普通文件权限设置为 644
-    sudo find "$userdir" -type f ! -name '*.php' ! -name '*.py' ! -name '*.sh' -exec sudo chmod 644 {} \;
+    # 先将所有文件设置为 644
+    sudo find "$userdir" -type f -exec sudo chmod 644 {} \;
     
     # PHP、Python 和 Shell 脚本设置为 755
-    sudo find "$userdir" -type f -name '*.php' -exec sudo chmod 755 {} \;
-    sudo find "$userdir" -type f \( -name '*.py' -o -name '*.sh' \) -exec sudo chmod 755 {} \;
+    sudo find "$userdir" -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' \) -exec sudo chmod 755 {} \;
+    
+    # 对无扩展名的文件进行特殊处理：
+    # 1. 检查文件是否是可执行的二进制文件或脚本
+    # 2. 如果是，则设置为 755
+    sudo find "$userdir" -type f ! -name '*.*' -exec sh -c '
+        for file do
+            if [ -x "$file" ] || file "$file" | grep -qE "ELF|executable|script"; then
+                chmod 755 "$file"
+            fi
+        done
+    ' sh {} +
+    
+    # 修复所有权
+    sudo chown -R ${owner}:${owner} "$userdir"
 done
+
+echo "权限设置完成"
