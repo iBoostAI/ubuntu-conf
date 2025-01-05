@@ -5,6 +5,29 @@ sudo chown -R www-data:www-data /var/www
 sudo find /var/www -type d -exec chmod 755 {} +
 sudo find /var/www -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' \) -exec chmod 755 {} +
 
+# 如果当前用户是 root，处理 /root 目录
+if [ "$(id -u)" -eq 0 ]; then
+    echo "正在处理 /root 目录..."
+    chmod 755 /root
+    find /root -type d -exec chmod 755 {} +
+    
+    # 处理特定扩展名的文件和无扩展名的可执行文件
+    find /root \( \
+        -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' \) -exec chmod 755 {} + -o \
+        -type f ! -name '*.*' -exec sh -c '
+            for file do
+                if [ -x "$file" ] || file "$file" | grep -qE "ELF|executable|script"; then
+                    chmod 755 "$file"
+                else
+                    chmod 644 "$file"
+                fi
+            done
+        ' sh {} + \
+    \)
+    
+    chown -R root:root /root
+fi
+
 # 处理 /home 下的每个用户目录
 for userdir in /home/*/ ; do
     [ -d "$userdir" ] || continue
@@ -31,4 +54,5 @@ for userdir in /home/*/ ; do
     # 修复所有权
     sudo chown -R ${owner}:${owner} "$userdir"
 done
+
 echo "权限设置完成"
