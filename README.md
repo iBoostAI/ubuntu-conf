@@ -1,10 +1,10 @@
 # ubuntu-conf
 Configration files for Ubuntu server (currently 21.04)
 
-ufw allow 80/tcp<br>
-ufw allow 443/tcp<br>
-ufw allow 3306/tcp<br>
-ufw disable && ufw --force enable<br>
+sudo ufw allow 80/tcp<br>
+sudo ufw allow 443/tcp<br>
+sudo ufw allow 3306/tcp<br>
+sudo ufw reload<br>
 ufw status<br>
 
 apt -y update && apt -y upgrade<br>
