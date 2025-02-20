@@ -5,10 +5,10 @@ sudo ufw allow 80/tcp<br>
 sudo ufw allow 443/tcp<br>
 sudo ufw allow 3306/tcp<br>
 sudo ufw reload<br>
-ufw status<br>
+sudo ufw status<br>
 
-apt -y update && apt -y upgrade<br>
-apt -y install apt-transport-https software-properties-common dirmngr gnupg2 unattended-upgrades cron-apt<br>
+sudo apt -y update && sudo apt -y upgrade<br>
+sudo apt -y install apt-transport-https software-properties-common dirmngr gnupg2 unattended-upgrades cron-apt<br>
 
 wget https://raw.githubusercontent.com/iboosting/ubuntu-conf/master/usr/bin/chweb -O /usr/bin/chweb && chmod +x /usr/bin/chweb<br>
 rm /etc/apt/sources.list && rm /etc/apt/sources.list~<br>
