@@ -3,7 +3,7 @@
 # 处理 /var/www 目录
 sudo chown -R www-data:www-data /var/www
 sudo find /var/www -type d -exec chmod 755 {} +
-sudo find /var/www -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' \) -exec chmod 755 {} +
+sudo find /var/www -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' -o -name '*.go' \) -exec chmod 755 {} +
 
 # 如果当前用户是 root，处理 /root 目录
 if [ "$(id -u)" -eq 0 ]; then
@@ -13,7 +13,7 @@ if [ "$(id -u)" -eq 0 ]; then
     
     # 处理特定扩展名的文件和无扩展名的可执行文件
     find /root \( \
-        -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' \) -exec chmod 755 {} + -o \
+        -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' -o -name '*.go' \) -exec chmod 755 {} + -o \
         -type f ! -name '*.*' -exec sh -c '
             for file do
                 if [ -x "$file" ] || file "$file" | grep -qE "ELF|executable|script"; then
@@ -39,7 +39,7 @@ for userdir in /home/*/ ; do
     
     # 只处理特定扩展名的文件和无扩展名的可执行文件
     sudo find "$userdir" \( \
-        -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' \) -exec chmod 755 {} + -o \
+        -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' -o -name '*.go' \) -exec chmod 755 {} + -o \
         -type f ! -name '*.*' -exec sh -c '
             for file do
                 if [ -x "$file" ] || file "$file" | grep -qE "ELF|executable|script"; then
