@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # 处理 /var/www 目录
 sudo chown -R www-data:www-data /var/www
 sudo find /var/www -type d -exec chmod 755 {} +
@@ -11,19 +10,20 @@ if [ "$(id -u)" -eq 0 ]; then
     chmod 755 /root
     find /root -type d -exec chmod 755 {} +
     
-    # 处理特定扩展名的文件和无扩展名的可执行文件
-    find /root \( \
-        -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' -o -name '*.go' \) -exec chmod 755 {} + -o \
-        -type f ! -name '*.*' -exec sh -c '
-            for file do
-                if [ -x "$file" ] || file "$file" | grep -qE "ELF|executable|script"; then
-                    chmod 755 "$file"
-                else
-                    chmod 644 "$file"
-                fi
-            done
-        ' sh {} + \
-    \)
+    # 确保 .go 文件也被正确处理
+    find /root -type f \( \
+        -name '*.php' -o -name '*.py' -o -name '*.sh' -o -name '*.go' \) -exec chmod 755 {} + 
+    
+    # 处理无扩展名的可执行文件
+    find /root -type f ! -name '*.*' -exec sh -c '
+        for file do
+            if [ -x "$file" ] || file "$file" | grep -qE "ELF|executable|script"; then
+                chmod 755 "$file"
+            else
+                chmod 644 "$file"
+            fi
+        done
+    ' sh {} +
     
     chown -R root:root /root
 fi
@@ -37,19 +37,20 @@ for userdir in /home/*/ ; do
     sudo chmod 755 "$userdir"
     sudo find "$userdir" -type d -exec chmod 755 {} +
     
-    # 只处理特定扩展名的文件和无扩展名的可执行文件
-    sudo find "$userdir" \( \
-        -type f \( -name '*.php' -o -name '*.py' -o -name '*.sh' -o -name '*.go' \) -exec chmod 755 {} + -o \
-        -type f ! -name '*.*' -exec sh -c '
-            for file do
-                if [ -x "$file" ] || file "$file" | grep -qE "ELF|executable|script"; then
-                    chmod 755 "$file"
-                else
-                    chmod 644 "$file"
-                fi
-            done
-        ' sh {} + \
-    \)
+    # 确保 .go 文件也被正确处理
+    sudo find "$userdir" -type f \( \
+        -name '*.php' -o -name '*.py' -o -name '*.sh' -o -name '*.go' \) -exec chmod 755 {} +
+    
+    # 处理无扩展名的可执行文件
+    sudo find "$userdir" -type f ! -name '*.*' -exec sh -c '
+        for file do
+            if [ -x "$file" ] || file "$file" | grep -qE "ELF|executable|script"; then
+                chmod 755 "$file"
+            else
+                chmod 644 "$file"
+            fi
+        done
+    ' sh {} +
     
     # 修复所有权
     sudo chown -R ${owner}:${owner} "$userdir"
